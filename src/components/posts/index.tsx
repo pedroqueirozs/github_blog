@@ -1,33 +1,35 @@
-import { useEffect, useState } from "react";
 import { Post } from "../post";
 import { PostsContainer } from "./styles";
-import { fetchRepositoryIssues } from "../../lib/axios";
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { useContext } from "react";
+import { IssuesContext } from "../../context/IssuesContext";
+
+interface Issue {
+  number: number;
+  title: string,
+  body: string,
+  created_at: string
+}
 
 export function Posts() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [issuesData, setIssuesData] = useState<any[]>([]);
+  const context = useContext(IssuesContext);
+  if (!context) {
+    return (
+      <p>Erro: o contexto não esta definido</p>
+    )
+  }
 
-  useEffect(() => {
-    async function getIssuesData() {
-      try {
-        const data = await fetchRepositoryIssues();
-        setIssuesData(data);
-      } catch (error) {
-        console.error("Erro ao carregar dados do usuario: ", error);
-      }
-    }
-    getIssuesData();
-    console.log(issuesData);
-  }, []);
+  const { issuesData } = context;
   return (
     <PostsContainer>
-      {issuesData.map((issue: any) => (
+      {issuesData.map((issue: Issue) => (
         <Post
+          key={issue.number}
+          numberIssue={issue.number}
           title={issue.title}
           body={issue.body}
-          created_at={formatDistanceToNow(issue.created_at, {
+          created_at={formatDistanceToNow(new Date(issue.created_at), {
             locale: ptBR,
             addSuffix: true,
           })}

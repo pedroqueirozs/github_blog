@@ -1,20 +1,24 @@
 import { PostContainer } from "./styles";
+import { Link } from "react-router-dom";
 
 interface PostProps {
+  numberIssue: number
   title: string;
   body: string;
   created_at: string;
 }
 
-export function Post(props: PostProps) {
+export function Post({ title, numberIssue, body, created_at }: PostProps) {
   return (
     <PostContainer>
-      <div>
-        <h3>{props.title}</h3>
-        <span>{props.created_at}</span>
-      </div>
+      <Link to={`/post/${numberIssue}`}>
+        <div>
+          <h3>{title}</h3>
+          <span>{created_at}</span>
+        </div>
 
-      <p>{props.body}</p>
+        <p>{body}</p>
+      </Link>
     </PostContainer>
   );
 }
