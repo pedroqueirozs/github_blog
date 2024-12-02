@@ -1,18 +1,20 @@
 import { PostContainer } from "./styles";
 
-export function Post() {
+interface PostProps {
+  title: string;
+  body: string;
+  created_at: string;
+}
+
+export function Post(props: PostProps) {
   return (
     <PostContainer>
       <div>
-        <h3>JavaScript data types and data structures</h3>
-        <span>Há 1 dia</span>
+        <h3>{props.title}</h3>
+        <span>{props.created_at}</span>
       </div>
 
-      <p>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in{" "}
-      </p>
+      <p>{props.body}</p>
     </PostContainer>
   );
 }
