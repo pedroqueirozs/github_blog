@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const PostContainer = styled.div`
 background: ${(props) => props.theme["background_post"]};
+display: flex;
 border-radius: 8px;
 padding: 10px;
 max-width: 26rem;
@@ -10,6 +11,7 @@ div{
     display: flex;
     gap: 20px;
     justify-content: space-between;
+    margin-bottom: 10px;
 
 }
 h3{
@@ -18,7 +20,4 @@ h3{
 span{
     font-size: .75rem;
 };
-
-.link {
-  text-decoration: none;
 `

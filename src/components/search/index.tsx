@@ -2,7 +2,9 @@ import { FormSearch } from "./styles";
 import { useContext } from "react";
 import { IssuesContext } from "../../context/IssuesContext";
 
+
 export function Search() {
+
   const context = useContext(IssuesContext)
   if (!context) {
     return (
@@ -10,6 +12,8 @@ export function Search() {
     )
   }
   const { issuesData } = context
+
+
   return (
     <FormSearch>
       <div>

@@ -6,6 +6,7 @@ import IconComments from "../../assets/icon_comments.svg";
 import IconLeftArrow from "../../assets/left_arrow_icon.svg";
 import { formatDistanceToNow } from "date-fns"
 import { ptBR } from "date-fns/locale";
+import { Link } from "react-router-dom";
 
 
 interface PostDescriptionProps {
@@ -20,12 +21,10 @@ export function PostDescription({ title, body, created_at, comments }: PostDescr
     <PostDescriptionContainer>
       <PostHeader>
         <div className="links">
-          <a href="#">
-            {" "}
+          <Link to={"/"}>
             <img src={IconLeftArrow} alt="" /> VOLTAR
-          </a>
-          <a href="#">
-            {" "}
+          </Link>
+          <a href="https://github.com/pedroqueirozs/github_blog/issues" target="blank">
             VER NO GITHUB <img src={IconSeta} alt="" />{" "}
           </a>
         </div>

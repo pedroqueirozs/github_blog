@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
 import { fetchRepositoryIssues } from "../lib/axios";
 
 interface Issue {
@@ -10,7 +10,10 @@ interface Issue {
 }
 interface IssuesContextData {
     issuesData: Issue[]
+    setIssuesData: Dispatch<SetStateAction<Issue[]>>;
 }
+
+
 
 export const IssuesContext = createContext<IssuesContextData | undefined>(undefined)
 export const IssuesProvider: React.FC<{ children: ReactNode }> = ({
@@ -33,10 +36,10 @@ export const IssuesProvider: React.FC<{ children: ReactNode }> = ({
         console.log(issuesData);
     }, []);
 
-
     return (
         <IssuesContext.Provider value={{
-            issuesData
+            issuesData,
+            setIssuesData
         }}>
             {children}
         </IssuesContext.Provider>

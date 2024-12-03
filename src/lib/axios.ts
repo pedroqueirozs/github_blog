@@ -1,4 +1,5 @@
 import axios from "axios";
+
 export const api = axios.create({
   baseURL: "https://api.github.com",
 });
@@ -13,15 +14,19 @@ export const fetchGitHubUser = async () => {
   }
 
 };
-export const fetchRepositoryIssues = async()=>{
-    try{
-        const response = await api.get("repos/pedroqueirozs/github_blog/issues ")
-        return  response.data
-    }catch(error){  
-        console.error("Erro ao buscar issues: ", error)
-        throw error
-    }
 
-} 
+
+export const fetchRepositoryIssues = async () => {
+  try {
+    const response = await api.get("repos/pedroqueirozs/github_blog/issues ")
+    return response.data
+  } catch (error) {
+    console.error("Erro ao buscar issues: ", error)
+    throw error
+  }
+
+}
+
 
 /* https://api.github.com/repos/pedroqueirozs/github_blog/issues */
+// https://api.github.com/search/issues?q=tailwind%20repo:pedroqueirozs/github_blog
