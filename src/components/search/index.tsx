@@ -11,7 +11,11 @@ export function Search() {
       <p>Erro: o contexto não esta definido</p>
     )
   }
-  const { issuesData } = context
+  const { issuesData, setSearchTerm } = context
+  
+  function handleUpdateSearchInput(event: React.ChangeEvent<HTMLInputElement>) {
+    setSearchTerm(event.target.value)
+  }
 
 
   return (
@@ -20,7 +24,7 @@ export function Search() {
         <h2>Publicações</h2>
         <span>{issuesData.length} {issuesData.length > 1 ? "Publicações" : "Publicação"}</span>
       </div>
-      <input type="text" placeholder="Buscar conteúdo" />
+      <input type="text" placeholder="Buscar conteúdo" onChange={handleUpdateSearchInput} />
     </FormSearch>
   );
 }
