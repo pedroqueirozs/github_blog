@@ -1,23 +1,25 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PostContainer = styled.div`
-background: ${(props) => props.theme["background_post"]};
-display: flex;
-border-radius: 8px;
-padding: 10px;
-max-width: 26rem;
+  background: ${(props) => props.theme.background_post};
+  display: flex;
+  border-radius: 8px;
+  padding: 20px;
+  width: 26rem;
+  height: 16rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-div{
+  div {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     margin-bottom: 10px;
-
-}
-h3{
+  }
+  h3 {
     flex: 1;
-}
-span{
-    font-size: .75rem;
-};
+  }
+  span {
+    font-size: 0.75rem;
+  }
 `

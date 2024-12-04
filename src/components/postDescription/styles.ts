@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PostDescriptionContainer = styled.div`
   width: 54rem;
@@ -7,7 +7,7 @@ export const PostDescriptionContainer = styled.div`
   flex-direction: column;
   margin-top: -60px;
   gap: 40px;
-`;
+`
 
 export const PostHeader = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ export const PostHeader = styled.div`
     justify-content: space-between;
   }
   .links a {
-    color: ${(props) => props.theme["text_links"]};
+    color: ${(props) => props.theme.text_links};
     text-decoration: none;
     display: flex;
     gap: 5px;
@@ -41,4 +41,9 @@ export const PostHeader = styled.div`
     align-items: center;
     justify-content: center;
   }
-`;
+`
+export const PostDescriptionBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+`

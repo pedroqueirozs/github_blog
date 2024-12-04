@@ -1,23 +1,23 @@
-import { PostDescription } from "../../components/postDescription";
-import { PostContainer } from "./styles";
-import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { IssuesContext } from "../../context/IssuesContext";
+import { useContext } from 'react'
+import { useParams } from 'react-router-dom'
+
+import { PostDescription } from '../../components/postDescription'
+import { IssuesContext } from '../../context/IssuesContext'
+import { PostContainer } from './styles'
 
 export function Post() {
   const { id } = useParams()
-  console.log(`Este e o numero da issue clicada, ${id}`)
   const context = useContext(IssuesContext)
   if (!context) {
-    return (
-      <p>Erro: o contexto não esta definido</p>
-    )
+    return <p>Erro: o contexto não esta definido</p>
   }
 
   const { issuesData } = context
-  const selectedIssue = issuesData.find((issue) => issue.number === parseInt(id || ""));
+  const selectedIssue = issuesData.find(
+    (issue) => issue.number === parseInt(id || ''),
+  )
   if (!selectedIssue) {
-    return <p>Issue não encontrada</p>;
+    return <p>Issue não encontrada</p>
   }
 
   return (
@@ -29,5 +29,5 @@ export function Post() {
         comments={selectedIssue.comments}
       />
     </PostContainer>
-  );
+  )
 }

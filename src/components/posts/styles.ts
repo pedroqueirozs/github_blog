@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PostsContainer = styled.div`
   margin-top: 35px;
@@ -6,4 +6,4 @@ export const PostsContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   gap: 15px;
-`;
+`

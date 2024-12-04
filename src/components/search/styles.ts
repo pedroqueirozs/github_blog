@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const FormSearch = styled.form`
   width: 100%;
@@ -11,14 +11,14 @@ export const FormSearch = styled.form`
   }
 
   input {
-    background-color: ${(props) => props.theme["background_input"]};
+    background-color: ${(props) => props.theme.background_input};
     width: 100%;
     height: 3rem;
     border-radius: 8px;
     border: 1px solid #1c2f41;
     padding: 10px;
   }
-  :focus{
+  :focus {
     outline: 0;
   }
-`;
+`

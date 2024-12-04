@@ -1,7 +1,7 @@
-import { Posts } from "../posts";
-import { Profile } from "../profile";
-import { Search } from "../search";
-import { MainContainer } from "./styles";
+import { Posts } from '../posts'
+import { Profile } from '../profile'
+import { Search } from '../search'
+import { MainContainer } from './styles'
 
 export function Main() {
   return (
@@ -10,5 +10,5 @@ export function Main() {
       <Search />
       <Posts />
     </MainContainer>
-  );
+  )
 }

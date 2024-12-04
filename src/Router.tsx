@@ -1,8 +1,8 @@
-import { Route, Routes } from "react-router-dom";
-import { DefaultLayout } from "./layouts/defaltLayout";
-import { Home } from "./pages/home";
-import { Post } from "./pages/post";
-import { IssuesProvider } from "./context/IssuesContext";
+import { Route, Routes } from 'react-router-dom'
+import { DefaultLayout } from './layouts/defaltLayout'
+import { Home } from './pages/home'
+import { Post } from './pages/post'
+import { IssuesProvider } from './context/IssuesContext'
 
 export function Router() {
   return (
@@ -14,6 +14,5 @@ export function Router() {
         </Route>
       </Routes>
     </IssuesProvider>
-
-  );
+  )
 }
